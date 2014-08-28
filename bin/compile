@@ -50,6 +50,8 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       if [ $? != 0 ]; then
         exit 1
       fi
+      
+      export
 
       if [ -x $dir/bin/release ]; then
         $dir/bin/release $1 > $1/last_pack_release.out
